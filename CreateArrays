@@ -4,7 +4,7 @@
 public int [] createArray(){
         int[] randomNumberArray = new int[10];
         
-        for (int i=0; i>randomNumberArray.length; i++){
+        for (int i=0; i<randomNumberArray.length; i++){
             randomNumberArray[i] = (int)(Math.random()*50) + 1;
         }
         return randomNumberArray;
