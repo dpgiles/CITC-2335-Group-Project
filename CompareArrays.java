@@ -2,7 +2,8 @@
 public class CompareArrays {
     private int[] array1, array2;
     private ArrayList<Integer> returnArray = new ArrayList();
-
+    private Integer[] diffArray;
+    
     //Constructor
     public CompareArrays(int[] array1, int[] array2) {
         this.array1 = array1;
@@ -10,7 +11,7 @@ public class CompareArrays {
         this.doComparasion();
     }
     
-    //Construstor will call this function to do the comparason
+    //Constructor will call this function to do the comparison
     private void doComparasion() {
         int count = 0;
         for(int i = 0; i < this.array1.length; i++) {
@@ -24,12 +25,20 @@ public class CompareArrays {
             if(found == false) {
                 this.returnArray.add(this.array1[i]);
                 count++;
-            }
+            }            
         }
+        //ArrayList to Array Conversion
+        this.diffArray = new Integer[this.returnArray.size()];
+        this.returnArray.toArray(this.diffArray);
+    }
+    
+    //Will return Array of ints that will be different
+    public Integer[] getDiffArray() {
+        return this.diffArray;
     }
 
     //Will return an ArrayList of Ints that will be different
-    public ArrayList<Integer> getDiff() {
+    public ArrayList<Integer> getDiffList() {
         return this.returnArray;
     }
     
